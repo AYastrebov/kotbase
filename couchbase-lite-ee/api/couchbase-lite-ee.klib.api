@@ -33,7 +33,9 @@ final enum class kotbase/DocumentFlag : kotlin/Enum<kotbase/DocumentFlag> { // k
 final enum class kotbase/LogDomain : kotlin/Enum<kotbase/LogDomain> { // kotbase/LogDomain|null[0]
     enum entry DATABASE // kotbase/LogDomain.DATABASE|null[0]
     enum entry LISTENER // kotbase/LogDomain.LISTENER|null[0]
+    enum entry MULTIPEER // kotbase/LogDomain.MULTIPEER|null[0]
     enum entry NETWORK // kotbase/LogDomain.NETWORK|null[0]
+    enum entry PEER_DISCOVERY // kotbase/LogDomain.PEER_DISCOVERY|null[0]
     enum entry QUERY // kotbase/LogDomain.QUERY|null[0]
     enum entry REPLICATOR // kotbase/LogDomain.REPLICATOR|null[0]
 
@@ -415,7 +417,7 @@ final class kotbase/ConnectionStatus { // kotbase/ConnectionStatus|null[0]
 
 final class kotbase/CouchbaseLiteError : kotlin/IllegalStateException { // kotbase/CouchbaseLiteError|null[0]
     constructor <init>(kotlin/String) // kotbase/CouchbaseLiteError.<init>|<init>(kotlin.String){}[0]
-    constructor <init>(kotlin/String, kotlin/Exception?) // kotbase/CouchbaseLiteError.<init>|<init>(kotlin.String;kotlin.Exception?){}[0]
+    constructor <init>(kotlin/String, kotlin/Throwable?) // kotbase/CouchbaseLiteError.<init>|<init>(kotlin.String;kotlin.Throwable?){}[0]
 }
 
 final class kotbase/CouchbaseLiteException : kotlin/Exception { // kotbase/CouchbaseLiteException|null[0]
@@ -1514,13 +1516,9 @@ final class kotbase/DatabaseConfiguration : kotbase.internal/DelegatedClass<coco
     final var isFullSync // kotbase/DatabaseConfiguration.isFullSync|{}isFullSync[0]
         final fun <get-isFullSync>(): kotlin/Boolean // kotbase/DatabaseConfiguration.isFullSync.<get-isFullSync>|<get-isFullSync>(){}[0]
         final fun <set-isFullSync>(kotlin/Boolean) // kotbase/DatabaseConfiguration.isFullSync.<set-isFullSync>|<set-isFullSync>(kotlin.Boolean){}[0]
-    final var isMMapEnabled // kotbase/DatabaseConfiguration.isMMapEnabled|{}isMMapEnabled[0]
-        final fun <get-isMMapEnabled>(): kotlin/Boolean // kotbase/DatabaseConfiguration.isMMapEnabled.<get-isMMapEnabled>|<get-isMMapEnabled>(){}[0]
-        final fun <set-isMMapEnabled>(kotlin/Boolean) // kotbase/DatabaseConfiguration.isMMapEnabled.<set-isMMapEnabled>|<set-isMMapEnabled>(kotlin.Boolean){}[0]
 
     final fun setDirectory(kotlin/String): kotbase/DatabaseConfiguration // kotbase/DatabaseConfiguration.setDirectory|setDirectory(kotlin.String){}[0]
     final fun setFullSync(kotlin/Boolean): kotbase/DatabaseConfiguration // kotbase/DatabaseConfiguration.setFullSync|setFullSync(kotlin.Boolean){}[0]
-    final fun setMMapEnabled(kotlin/Boolean): kotbase/DatabaseConfiguration // kotbase/DatabaseConfiguration.setMMapEnabled|setMMapEnabled(kotlin.Boolean){}[0]
 }
 
 // Targets: [apple]
@@ -2641,13 +2639,9 @@ final class kotbase/DatabaseConfiguration { // kotbase/DatabaseConfiguration|nul
     final var isFullSync // kotbase/DatabaseConfiguration.isFullSync|{}isFullSync[0]
         final fun <get-isFullSync>(): kotlin/Boolean // kotbase/DatabaseConfiguration.isFullSync.<get-isFullSync>|<get-isFullSync>(){}[0]
         final fun <set-isFullSync>(kotlin/Boolean) // kotbase/DatabaseConfiguration.isFullSync.<set-isFullSync>|<set-isFullSync>(kotlin.Boolean){}[0]
-    final var isMMapEnabled // kotbase/DatabaseConfiguration.isMMapEnabled|{}isMMapEnabled[0]
-        final fun <get-isMMapEnabled>(): kotlin/Boolean // kotbase/DatabaseConfiguration.isMMapEnabled.<get-isMMapEnabled>|<get-isMMapEnabled>(){}[0]
-        final fun <set-isMMapEnabled>(kotlin/Boolean) // kotbase/DatabaseConfiguration.isMMapEnabled.<set-isMMapEnabled>|<set-isMMapEnabled>(kotlin.Boolean){}[0]
 
     final fun setDirectory(kotlin/String): kotbase/DatabaseConfiguration // kotbase/DatabaseConfiguration.setDirectory|setDirectory(kotlin.String){}[0]
     final fun setFullSync(kotlin/Boolean): kotbase/DatabaseConfiguration // kotbase/DatabaseConfiguration.setFullSync|setFullSync(kotlin.Boolean){}[0]
-    final fun setMMapEnabled(kotlin/Boolean): kotbase/DatabaseConfiguration // kotbase/DatabaseConfiguration.setMMapEnabled|setMMapEnabled(kotlin.Boolean){}[0]
 }
 
 // Targets: [linux, mingwX64]

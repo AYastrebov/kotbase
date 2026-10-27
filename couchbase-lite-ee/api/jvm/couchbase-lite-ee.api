@@ -457,13 +457,10 @@ public final class kotbase/DatabaseConfiguration : kotbase/internal/DelegatedCla
 	public fun <init> (Lkotbase/DatabaseConfiguration;)V
 	public final fun getDirectory ()Ljava/lang/String;
 	public final fun isFullSync ()Z
-	public final fun isMMapEnabled ()Z
 	public final fun setDirectory (Ljava/lang/String;)Lkotbase/DatabaseConfiguration;
 	public final fun setDirectory (Ljava/lang/String;)V
 	public final fun setFullSync (Z)Lkotbase/DatabaseConfiguration;
 	public final fun setFullSync (Z)V
-	public final fun setMMapEnabled (Z)Lkotbase/DatabaseConfiguration;
-	public final fun setMMapEnabled (Z)V
 }
 
 public final class kotbase/DatabaseConfigurationEEKt {
@@ -1030,7 +1027,9 @@ public final class kotbase/LogDomain : java/lang/Enum {
 	public static final field Companion Lkotbase/LogDomain$Companion;
 	public static final field DATABASE Lkotbase/LogDomain;
 	public static final field LISTENER Lkotbase/LogDomain;
+	public static final field MULTIPEER Lkotbase/LogDomain;
 	public static final field NETWORK Lkotbase/LogDomain;
+	public static final field PEER_DISCOVERY Lkotbase/LogDomain;
 	public static final field QUERY Lkotbase/LogDomain;
 	public static final field REPLICATOR Lkotbase/LogDomain;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
