@@ -2,7 +2,7 @@
 couchbase-lite-java = "3.4.2"
 couchbase-lite-objc = "3.4.2"
 couchbase-lite-c = "3.4.2"
-couchbase-lite-vector-search = "1.0.0"
+couchbase-lite-vector-search = "2.0.0"
 dokka = "2.2.0"
 mockk = "1.14.11"
 
