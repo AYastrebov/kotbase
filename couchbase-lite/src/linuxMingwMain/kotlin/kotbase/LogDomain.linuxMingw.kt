@@ -34,8 +34,9 @@ public actual enum class LogDomain {
             REPLICATOR -> kCBLLogDomainReplicator
             NETWORK -> kCBLLogDomainNetwork
             LISTENER -> kCBLLogDomainListener
-            // The C SDK has no peer discovery or multipeer log domains
-            PEER_DISCOVERY, MULTIPEER -> error("LogDomain $this is not supported by the C SDK")
+            // The C SDK has no peer discovery or multipeer log domains, use the closest ones
+            PEER_DISCOVERY -> kCBLLogDomainNetwork
+            MULTIPEER -> kCBLLogDomainReplicator
         }.convert()
 
     public actual companion object {
