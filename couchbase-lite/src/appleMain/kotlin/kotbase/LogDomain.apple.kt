@@ -54,9 +54,11 @@ public actual enum class LogDomain {
             kCBLLogDomainReplicator -> REPLICATOR
             kCBLLogDomainNetwork -> NETWORK
             kCBLLogDomainListener -> LISTENER
-            kCBLLogDomainPeerDiscovery -> PEER_DISCOVERY
+            // mDNS logs are part of DNS-SD peer discovery
+            kCBLLogDomainPeerDiscovery, kCBLLogDomainMDNS -> PEER_DISCOVERY
             kCBLLogDomainMultipeer -> MULTIPEER
-            else -> error("Unexpected CBLLogDomain ($logDomain)")
+            // called from Couchbase Lite's logging callbacks, so don't throw for domains added in newer SDKs
+            else -> DATABASE
         }
     }
 }
@@ -78,7 +80,7 @@ internal fun CBLLogDomain.toLogDomain(): Set<LogDomain> = buildSet {
     if (domains and kCBLLogDomainListener != 0UL) {
         add(LogDomain.LISTENER)
     }
-    if (domains and kCBLLogDomainPeerDiscovery != 0UL) {
+    if (domains and (kCBLLogDomainPeerDiscovery or kCBLLogDomainMDNS) != 0UL) {
         add(LogDomain.PEER_DISCOVERY)
     }
     if (domains and kCBLLogDomainMultipeer != 0UL) {
@@ -104,7 +106,7 @@ internal fun Set<LogDomain>.toCBLLogDomain(): CBLLogDomain {
         domains = domains or kCBLLogDomainListener
     }
     if (contains(LogDomain.PEER_DISCOVERY)) {
-        domains = domains or kCBLLogDomainPeerDiscovery
+        domains = domains or kCBLLogDomainPeerDiscovery or kCBLLogDomainMDNS
     }
     if (contains(LogDomain.MULTIPEER)) {
         domains = domains or kCBLLogDomainMultipeer
