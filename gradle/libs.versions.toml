@@ -37,6 +37,5 @@ kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version = "0.9.
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.12.0" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
-# Last release with iosX64 and macosX64 targets, required by kotbase-paging
-paging = { module = "androidx.paging:paging-common", version = "3.4.0-beta01" }
+paging = { module = "androidx.paging:paging-common", version = "3.5.3" }
 stately = { module = "co.touchlab:stately-concurrent-collections", version = "2.1.0" }
