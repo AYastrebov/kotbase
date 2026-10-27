@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
+
 plugins {
     id("base-convention")
     id("dokka-convention")
@@ -6,6 +8,15 @@ plugins {
 
 kotlin {
     explicitApiWarning()
+
+    @OptIn(ExperimentalAbiValidation::class)
+    abiValidation {
+        filters {
+            exclude {
+                byNames.add("dev.kotbase.**.BuildConfig")
+            }
+        }
+    }
 }
 
 mavenPublishing {
