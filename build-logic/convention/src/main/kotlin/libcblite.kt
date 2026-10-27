@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project
 import org.gradle.api.internal.catalog.DelegatingProjectDependency
 import org.gradle.kotlin.dsl.withType
@@ -38,7 +37,7 @@ fun KotlinMultiplatformExtension.linkLibcblite(fromProject: Project = project) {
                 Family.MINGW -> {
                     binaries.getTest(DEBUG).linkTaskProvider.configure {
                         doLast {
-                            val version = libs.versions.couchbase.lite.c.get()
+                            val version = libs.version("couchbase-lite-c")
                             val outputDir = outputFile.get().parentFile
                             fromProject.projectDir.resolve("${libcblitePath("windows", "x86_64", version)}/bin/cblite.dll")
                                 .copyTo(outputDir.resolve("cblite.dll"), overwrite = true)
@@ -59,12 +58,9 @@ val KotlinNativeTarget.libcbliteIncludePath: String
 
 private val KotlinNativeTarget.libcblitePath: String
     get() {
-        val version = project.libs.versions.couchbase.lite.c.get()
+        val version = project.libs.version("couchbase-lite-c")
         return libcblitePath(konanTarget.os, konanTarget.arch, version)
     }
-
-private val Project.libs: LibrariesForLibs
-    get() = extensions.getByName("libs") as LibrariesForLibs
 
 private val KonanTarget.os: String
     get() = when (family) {
@@ -98,7 +94,7 @@ private fun libcblitePath(os: String, arch: String, version: String): String =
 
 val Project.vectorSearchLibPath: String
     get() {
-        val version = libs.versions.couchbase.lite.vector.search.get()
+        val version = libs.version("couchbase-lite-vector-search")
         val currentOs = DefaultNativePlatform.getCurrentOperatingSystem()
         val (os, suffix) = when {
             currentOs.isLinux -> "linux" to "/lib"

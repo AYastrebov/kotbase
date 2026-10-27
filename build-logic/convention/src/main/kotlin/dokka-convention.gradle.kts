@@ -1,4 +1,3 @@
-import org.gradle.accessors.dm.LibrariesForLibs
 import org.jetbrains.dokka.gradle.engine.parameters.KotlinPlatform
 import java.time.LocalDate
 
@@ -6,9 +5,8 @@ plugins {
     org.jetbrains.dokka
 }
 
-val libs = the<LibrariesForLibs>()
 dependencies {
-    dokkaPlugin(libs.dokka.versioning)
+    dokkaPlugin(libs.findLibrary("dokka-versioning").get())
 }
 
 dokka {

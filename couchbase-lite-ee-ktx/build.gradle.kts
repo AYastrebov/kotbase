@@ -1,6 +1,6 @@
 plugins {
-    `multiplatform-convention`
-    `library-convention`
+    id("multiplatform-convention")
+    id("library-convention")
 }
 
 description = "Couchbase Lite Enterprise Edition for Kotlin Multiplatform – Kotlin Extensions"

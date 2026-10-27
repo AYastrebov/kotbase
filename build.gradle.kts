@@ -1,7 +1,7 @@
 import kotlinx.validation.ExperimentalBCVApi
 
 plugins {
-    `dokka-convention`
+    id("dokka-convention")
     alias(libs.plugins.kotlinx.binary.compatibility.validator)
 }
 

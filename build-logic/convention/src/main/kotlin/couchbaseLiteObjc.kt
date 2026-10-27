@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project
 
 /**
@@ -24,6 +23,6 @@ import org.gradle.api.Project
  */
 val Project.couchbaseLiteObjcFrameworkSearchPath: String
     get() {
-        val version = (extensions.getByName("libs") as LibrariesForLibs).versions.couchbase.lite.objc.get()
+        val version = libs.version("couchbase-lite-objc")
         return "$projectDir/vendor/CouchbaseLite/CouchbaseLite-$version"
     }

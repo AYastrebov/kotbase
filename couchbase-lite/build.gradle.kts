@@ -5,8 +5,8 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.konan.target.Family
 
 plugins {
-    `multiplatform-convention`
-    `library-convention`
+    id("multiplatform-convention")
+    id("library-convention")
 }
 
 description = "Couchbase Lite Community Edition for Kotlin Multiplatform"

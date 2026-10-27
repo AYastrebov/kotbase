@@ -91,8 +91,7 @@ dependencies {
 configurations.configureEach {
     resolutionStrategy.eachDependency {
         if (requested.group == "org.jetbrains.kotlinx" && requested.name == "kotlinx-serialization-core") {
-            val libs = the<org.gradle.accessors.dm.LibrariesForLibs>()
-            useVersion(libs.versions.kotlinx.serialization.get())
+            useVersion(libs.version("kotlinx-serialization"))
         }
     }
 }//*/

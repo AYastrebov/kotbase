@@ -2,15 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-repositories {
-    google()
-    gradlePluginPortal()
-    mavenCentral()
-}
-
 dependencies {
-    // https://github.com/gradle/gradle/issues/15383#issuecomment-779893192
-    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
     implementation(plugin(libs.plugins.kotlin.multiplatform))
     implementation(plugin(libs.plugins.kotlinx.atomicfu))
     implementation(plugin(libs.plugins.android.kotlin.multiplatform.library))
