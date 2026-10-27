@@ -1,6 +1,11 @@
-
-#language=C
+language = Objective-C
+modules = CouchbaseLite
+package = swiftPMImport.CouchbaseLite
+# Workaround for 'CBLQueryMeta' is going to be declared twice
+# https://youtrack.jetbrains.com/issue/KT-41709
+compilerOpts = -fmodules -DCBLQueryMeta=CBLQueryMetaUnavailable
 ---
+// Internal headers required for tests
 
 typedef struct FLSlice {
     const void* buf;

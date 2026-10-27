@@ -7,7 +7,6 @@ import rules.applyCouchbaseLiteRule
 
 plugins {
     `kotlin-multiplatform`
-    `kotlin-native-cocoapods`
     com.android.kotlin.multiplatform.library
     org.jetbrains.kotlinx.atomicfu
 }
@@ -30,18 +29,6 @@ kotlin {
         // required by coroutines 1.7.0+ to avoid errors:
         // 6 files found with path 'META-INF/LICENSE.md'
         packaging.resources.pickFirsts += "META-INF/**"
-    }
-
-    cocoapods {
-        version = project.version.toString()
-        homepage = "https://kotbase.dev/"
-        source = "{ :git => 'https://github.com/jeffdgr8/kotbase.git', :tag => $version }"
-        authors = "Jeff Lockhart"
-        license = "Apache License, Version 2.0"
-        afterEvaluate { summary = description }
-        ios.deploymentTarget = "12.0"
-        osx.deploymentTarget = "12.0"
-        noPodspec()
     }
 
     compilerOptions.freeCompilerArgs.addAll(

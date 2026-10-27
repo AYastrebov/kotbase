@@ -11,17 +11,6 @@ kotlin {
         minSdk = 23
     }
 
-    cocoapods {
-        framework {
-            binaryOption("bundleId", "dev.kotbase.paging")
-            binaryOption("bundleVersion", version.toString())
-        }
-        pod("CouchbaseLite") {
-            version = libs.versions.couchbase.lite.objc.get()
-            linkOnly = true
-        }
-    }
-
     linkLibcblite(projects.couchbaseLite)
 
     sourceSets {

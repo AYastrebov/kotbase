@@ -15,7 +15,7 @@
  */
 package kotbase
 
-import cocoapods.CouchbaseLite.*
+import swiftPMImport.CouchbaseLite.*
 
 public actual enum class LogDomain {
     DATABASE,

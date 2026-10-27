@@ -15,7 +15,7 @@
  */
 package kotbase
 
-import cocoapods.CouchbaseLite.CBLDatabaseConfiguration
+import swiftPMImport.CouchbaseLite.CBLDatabaseConfiguration
 import kotbase.internal.DelegatedClass
 
 public actual class DatabaseConfiguration

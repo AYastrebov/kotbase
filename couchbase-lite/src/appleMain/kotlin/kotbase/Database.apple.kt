@@ -15,7 +15,7 @@
  */
 package kotbase
 
-import cocoapods.CouchbaseLite.*
+import swiftPMImport.CouchbaseLite.*
 import kotbase.internal.DelegatedClass
 import kotbase.ext.asDispatchQueue
 import kotbase.ext.dispatcher
